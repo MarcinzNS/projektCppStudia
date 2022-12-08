@@ -1,5 +1,6 @@
 #include "board.h"
 #include "point.h"
+#include "line.h"
 #define WIN_WIDTH 500
 #define WIN_HEIGHT 650
 
@@ -12,6 +13,7 @@ Board::Board(){
                 );
         }
     }
+    lines = Line(points[0][0], points[0][1]);
 }
 
 void Board::draw(sf::RenderWindow& window){
@@ -20,4 +22,5 @@ void Board::draw(sf::RenderWindow& window){
             points[x][y].draw(window);
         }
     }
+    lines.draw(window);
 }
