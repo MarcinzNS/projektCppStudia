@@ -1,1 +1,5 @@
 /Makefile
+board.o
+main.o
+point.o
+main.exe

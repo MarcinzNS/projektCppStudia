@@ -7,8 +7,7 @@ class Point{
     bool occupied;
     sf::CircleShape shape;
 public:
-    Point();
-    Point(int x, int y);
+    Point(int x=0, int y=0);
     int getPosX() const;
     int getPosY() const;
     void setPos(int x, int y);
