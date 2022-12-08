@@ -44,7 +44,6 @@ Line::Line(Point p1, Point p2){
     line.setPosition(x1, y1);
 }
 
-
 void Line::draw(sf::RenderWindow& window){
     window.draw(line);
 }

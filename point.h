@@ -12,7 +12,7 @@ public:
     int getPosY() const;
     void setPos(int x, int y);
 
-    int isOccupied() const;
+    bool isOccupied() const;
     void occupy();
     
     void draw(sf::RenderWindow& window);

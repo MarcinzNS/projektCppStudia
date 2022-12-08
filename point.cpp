@@ -19,7 +19,7 @@ void Point::setPos(int x, int y){
     posY = y;
 }
 
-int Point::isOccupied() const {return occupied;}
+bool Point::isOccupied() const {return occupied;}
 void Point::occupy() {occupied = !occupied;}
 
 void Point::draw(sf::RenderWindow& window){
