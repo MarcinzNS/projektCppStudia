@@ -12,10 +12,13 @@ Line::Line(){
 
     float dl = sqrt( pow(x1-x2, 2) + pow(y1-y2, 2));
 
-    line.setSize(sf::Vector2f(dl, 4));
-    line.rotate(-atan((y1-y2)/(x1-x2)) * 180 / M_PI);
+    line.setSize(sf::Vector2f(dl, 2));
+    if (x2==x1)
+        line.rotate(90);
+    else if (x2!=x1)
+        line.rotate(atan((y2-y1)/(x2-x1)) * 180 / M_PI);
 
-    line.setOrigin(2, 2);
+    line.setOrigin(1, 1);
     line.setPosition(x1, y1);
 }
 
@@ -31,10 +34,13 @@ Line::Line(Point p1, Point p2){
 
     float dl = sqrt( pow(x1-x2, 2) + pow(y1-y2, 2));
 
-    line.setSize(sf::Vector2f(dl, 4));
-    line.rotate(-atan((y1-y2)/(x1-x2)) * 180 / M_PI);
+    line.setSize(sf::Vector2f(dl, 2));
+    if (x2==x1)
+        line.rotate(90);
+    else if (x2!=x1)
+        line.rotate(atan((y2-y1)/(x2-x1)) * 180 / M_PI);
 
-    line.setOrigin(2, 2);
+    line.setOrigin(1, 1);
     line.setPosition(x1, y1);
 }
 

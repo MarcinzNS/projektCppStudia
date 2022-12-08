@@ -1,5 +1,5 @@
 #include "point.h"
-#define RPOINT 4.0f
+#define RPOINT 6.0f
 
 Point::Point(int x, int y)
 {
@@ -8,7 +8,7 @@ Point::Point(int x, int y)
     occupied = false;
     shape.setRadius(RPOINT);
     shape.setOrigin(RPOINT, RPOINT);
-    shape.setFillColor(sf::Color(220, 200, 200));
+    shape.setFillColor(sf::Color(200, 200, 220));
     shape.setPosition(posX, posY);
 }
 

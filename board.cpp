@@ -11,16 +11,29 @@ Board::Board(){
                 100+((WIN_WIDTH-200)/4)*x,
                 100+((WIN_WIDTH-200)/4)*y
                 );
+        }   
+    }
+    int i = 0;
+    for(int x=0; x<4; x++){
+        for(int y=0; y<4; y++){
+            lines[i++] = Line(points[x][y], points[x+1][y]);
+            lines[i++] = Line(points[x][y], points[x][y+1]);
+            if ((x+y)%2 == 1)
+                lines[i++] = Line(points[x][y+1], points[x+1][y]);
+            else
+                lines[i++] = Line(points[x][y], points[x+1][y+1]);
         }
     }
-    lines = Line(points[0][0], points[0][1]);
+    for(int xy=0; xy<4; xy++){
+        lines[i++] = Line(points[4][xy], points[4][xy+1]);
+        lines[i++] = Line(points[xy][4], points[xy+1][4]);
+    }
 }
 
 void Board::draw(sf::RenderWindow& window){
-    for(int x=0; x<5; x++){
-        for(int y=0; y<5; y++){
+    for(int i=0; i<56; i++) lines[i].draw(window);
+
+    for(int x=0; x<5; x++)
+        for(int y=0; y<5; y++)
             points[x][y].draw(window);
-        }
-    }
-    lines.draw(window);
 }
