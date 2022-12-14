@@ -9,7 +9,7 @@ class Pawn{
     sf::Color color;
     sf::Color colorBorder;
 public:
-    Pawn();
+    Pawn(int x=0, int y=0);
     int getPosX() const;
     int getPosY() const;
     void setColorBorder(int r, int g, int b);

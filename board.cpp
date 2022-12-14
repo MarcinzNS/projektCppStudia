@@ -1,6 +1,7 @@
 #include "board.h"
 #include "point.h"
 #include "line.h"
+#include "player.h"
 #define WIN_WIDTH 500
 #define WIN_HEIGHT 650
 
@@ -28,12 +29,16 @@ Board::Board(){
         lines[i++] = Line(points[4][xy], points[4][xy+1]);
         lines[i++] = Line(points[xy][4], points[xy+1][4]);
     }
+    p1.setColorBorder(255, 0, 0);
+    p1.setCord(1, 2);
 }
 
 void Board::draw(sf::RenderWindow& window){
-    for(int i=0; i<56; i++) lines[i].draw(window);
+    for(int i=0; i<56; i++)
+        lines[i].draw(window);
 
     for(int x=0; x<5; x++)
         for(int y=0; y<5; y++)
             points[x][y].draw(window);
+    p1.draw(window);
 }

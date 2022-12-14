@@ -15,18 +15,21 @@ Pawn::Pawn(int x, int y){
     shape.setFillColor(sf::Color(255, 255, 255, 100));
 }
 
-int getPosX() const { return 100+((WIN_WIDTH-200)/4)*X; }
-int getPosY() const { return 100+((WIN_WIDTH-200)/4)*Y; }
+int Pawn::getPosX() const { return 100+((WIN_WIDTH-200)/4)*X; }
+int Pawn::getPosY() const { return 100+((WIN_WIDTH-200)/4)*Y; }
 
-void setColorBorder(int r, int g, int b){
+void Pawn::setColorBorder(int r, int g, int b){
     colorBorder = sf::Color(r, g, b);
+    shapeBorder.setFillColor(colorBorder);
 }
-void setCord(int x, int y){
+void Pawn::setCord(int x, int y){
     X = x;
     Y = y;
+    shapeBorder.setPosition(getPosX(), getPosY());
+    shape.setPosition(getPosX(), getPosY());
 }
 
-void draw(sf::RenderWindow& window){
+void Pawn::draw(sf::RenderWindow& window){
     window.draw(shapeBorder);
     window.draw(shape);
 }
